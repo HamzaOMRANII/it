@@ -1,4 +1,4 @@
-// App icon: the same mark as the omranisystems.com tiles, with the app's colours and badge.
+// App icon (the glyph is drawn around (100,100) in a 24-unit box and scaled up inside the badge): the same mark as the omranisystems.com tiles, with the app's colours and badge.
 const glyphs = {
   lock: (badge) => (
     <>
@@ -168,8 +168,8 @@ export function AppMark({ line, badge, glyph }) {
       <circle cx="60" cy="60" r="46" fill="none" stroke="#FFFFFF" strokeWidth="9" />
       <path d="M116 32H52Q40 32 40 44V48Q40 60 52 60H68Q80 60 80 72V76Q80 88 68 88H4" fill="none" stroke="var(--tile)" strokeWidth="21" />
       <path d="M102 32H52Q40 32 40 44V48Q40 60 52 60H68Q80 60 80 72V76Q80 88 68 88H18" fill="none" stroke={line} strokeWidth="11" />
-      <circle cx="100" cy="100" r="19" fill={badge} stroke="var(--tile)" strokeWidth="5" />
-      {glyphs[glyph]?.(badge)}
+      <circle cx="99" cy="99" r="25" fill={badge} stroke="var(--tile)" strokeWidth="5" />
+      <g transform="translate(99 99) scale(1.7) translate(-100 -100)">{glyphs[glyph]?.(badge)}</g>
     </svg>
   );
 }

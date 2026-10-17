@@ -70,26 +70,29 @@ export const statusLabel = {
   bounty: 'Bug reports',
 };
 
-// Inner pages: cards without links, glyph + one line each.
-const mark = { line: '#2FD1D9', badge: '#1C6E7A' };
-const gold = { line: '#C9A24D', badge: '#8A6B22' };
+// Colours of a home card, reused by the page it opens (and by that page's cards and background).
+export const accentOf = (id) => {
+  const { line, badge } = apps.find((a) => a.id === id).icon;
+  return { line, badge };
+};
 
+// Inner pages: cards without links, glyph + one line each. Colours come from the parent card.
 export const services = [
-  { name: 'Software solutions', text: 'Web, desktop and backend software built to fit your need.', icon: { ...mark, glyph: 'code' } },
-  { name: 'Embedded systems', text: 'Firmware and electronics for devices that must just work.', icon: { ...mark, glyph: 'chip' } },
-  { name: 'Full systems', text: 'End to end: hardware, firmware, software and cloud, in one hand.', icon: { ...mark, glyph: 'layers' } },
-  { name: 'OS and embedded OS', text: 'Custom operating systems and embedded OS builds.', icon: { ...mark, glyph: 'terminal' } },
-  { name: 'Security services', text: 'Audits, and checks of security features in embedded systems and software.', icon: { ...mark, glyph: 'shieldcheck' } },
+  { name: 'Software solutions', text: 'Web, desktop and backend software built to fit your need.', glyph: 'code' },
+  { name: 'Embedded systems', text: 'Firmware and electronics for devices that must just work.', glyph: 'chip' },
+  { name: 'Full systems', text: 'End to end: hardware, firmware, software and cloud, in one hand.', glyph: 'layers' },
+  { name: 'OS and embedded OS', text: 'Custom operating systems and embedded OS builds.', glyph: 'terminal' },
+  { name: 'Security services', text: 'Audits, and checks of security features in embedded systems and software.', glyph: 'shieldcheck' },
 ];
 
 export const premium = [
-  { name: 'GPS & geolocation', text: 'Precise positioning and location systems.', icon: { ...gold, glyph: 'pin' } },
-  { name: 'Aviation systems', text: 'Technology for aircraft and flight operations.', icon: { ...gold, glyph: 'plane' } },
-  { name: 'Intelligence & counter-surveillance', text: 'Spot who is watching, and stay unseen.', icon: { ...gold, glyph: 'eye' } },
-  { name: 'Digital forensics', text: 'Evidence from devices and data, handled properly.', icon: { ...gold, glyph: 'print' } },
-  { name: 'Data recovery', text: 'Get back what was lost, damaged or deleted.', icon: { ...gold, glyph: 'disk' } },
-  { name: 'Information gathering', text: 'OSINT: open-source intelligence, done methodically.', icon: { ...gold, glyph: 'globe' } },
-  { name: 'Deep IT investigations', text: 'Find out what really happened inside your systems.', icon: { ...gold, glyph: 'search' } },
-  { name: 'Trackers', text: 'Know where your assets are, in real time.', icon: { ...gold, glyph: 'target' } },
-  { name: 'Tracers', text: 'Follow a trail back to its source.', icon: { ...gold, glyph: 'route' } },
+  { name: 'GPS & geolocation', text: 'Precise positioning and location systems.', glyph: 'pin' },
+  { name: 'Aviation systems', text: 'Technology for aircraft and flight operations.', glyph: 'plane' },
+  { name: 'Intelligence & counter-surveillance', text: 'Spot who is watching, and stay unseen.', glyph: 'eye' },
+  { name: 'Digital forensics', text: 'Evidence from devices and data, handled properly.', glyph: 'print' },
+  { name: 'Data recovery', text: 'Get back what was lost, damaged or deleted.', glyph: 'disk' },
+  { name: 'Information gathering', text: 'OSINT: open-source intelligence, done methodically.', glyph: 'globe' },
+  { name: 'Deep IT investigations', text: 'Find out what really happened inside your systems.', glyph: 'search' },
+  { name: 'Trackers', text: 'Know where your assets are, in real time.', glyph: 'target' },
+  { name: 'Tracers', text: 'Follow a trail back to its source.', glyph: 'route' },
 ];
