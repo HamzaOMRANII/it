@@ -2,7 +2,7 @@ Claude Code session: IT site (it.omranisystems.com) design + client projects and
 ========================================================================================
 
 Session ID : ef616acd-8fc0-41db-b8fb-4e1aff61e398
-Saved      : 2026-10-17
+Saved      : 2026-10-17 (last update: after the production deploy of fae8347)
 Transcript : /root/.claude/projects/-projects/ef616acd-8fc0-41db-b8fb-4e1aff61e398.jsonl
 
 HOW TO RELAUNCH THIS CHAT
@@ -30,6 +30,21 @@ WHAT IS DONE (approved)
     6. Danger Zone          -> /danger-zone (skull, red; animated GPS-tracker background)
   Each inner page keeps the colour of its card. Badge glyphs are enlarged 1.7x.
 - Contact: hamza.omrani.it@gmail.com, contact@omranisystems.com, +1 505 659 2792
+
+PRODUCTION STATE (2026-10-17)
+-----------------------------
+- Logo + name approved: IT tile logo and "it omranisystems" wordmark, IT blue glow and favicon.
+- Deployed with /projects/deploy.sh it it. Production = GitHub main = the last site commit, fae8347.
+- Checks: 127.0.0.1:13000 -> 200; https://it.omranisystems.com without the code -> 302 to the IT code screen.
+
+HISTORY (commits on main)
+-------------------------
+  e0e3a0a  first one-page list of apps (later replaced)
+  d52b700  client projects & services: 6 cards + /services /contact /premium /danger-zone
+  08adcaa  bigger badge glyphs, per-page colours, tracker + premium backgrounds
+  4a4f9ce  /contact titled "Products" + note asking for identity and product field
+  145b1c4  this session note
+  fae8347  IT logo, colours and "it omranisystems" wordmark  <- in production
 
 WHERE TO EDIT
 -------------
