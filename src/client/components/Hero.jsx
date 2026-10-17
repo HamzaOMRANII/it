@@ -6,6 +6,7 @@ export function Hero({ small, children }) {
       <Logo className="hero-mark" />
       <div>
         <h1 className="wordmark">
+          <span className="w-it">it</span>
           <span className="w-strong">omrani</span>
           <span className="w-light">systems</span>
         </h1>

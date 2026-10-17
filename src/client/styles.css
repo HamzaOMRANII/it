@@ -1,4 +1,4 @@
-/* Tokens: navy palette from the portfolio, mark + wordmark from omranisystems.com */
+/* Tokens: navy palette from the portfolio, IT mark + wordmark from the omranisystems.com IT tile */
 :root{
   --navy-950: #050B14;
   --navy-900: #0A1524;
@@ -10,6 +10,8 @@
   --gold: #C9A24D;
   --danger: #EF4444;
   --blue: #1E8FE1;
+  --it-blue: #3B5BDB;
+  --it-navy: #1E3A8A;
 
   --ink: #EAF0F6;
   --ink-muted: #90A5B9;
@@ -45,7 +47,7 @@ body{
 }
 .orb-b{
   width: 520px; height: 520px; bottom: -200px; right: -160px;
-  background: radial-gradient(circle, var(--blue) 0%, transparent 72%);
+  background: radial-gradient(circle, var(--it-blue) 0%, transparent 72%);
   opacity: 0.14;
   animation: drift-b 32s ease-in-out infinite alternate;
 }
@@ -83,6 +85,7 @@ body{
   font-weight: 700;
   color: #fff;
 }
+.w-it{ color: var(--it-blue); margin-right: 0.22em; }
 .w-light{ font-weight: 300; color: var(--ink-muted); }
 .domain{
   margin: 14px 0 0 3px;

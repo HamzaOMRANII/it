@@ -19,7 +19,8 @@ WHAT IS DONE (approved)
 - Stack: Vite + React, same as the portfolio. src/server.js serves dist/. PM2 app "it" on 127.0.0.1:13000.
 - Access code: the omranisystems.com gate (CODE_IT in /projects/omranisystems/.env). Nginx checks it
   before every request.
-- Design: the omranisystems logo and wordmark on the portfolio's dark navy, one section, 6 cards:
+- Design: the IT logo (blue #3B5BDB S, navy #1E3A8A </> badge) and the wordmark "it omranisystems"
+  on the portfolio's dark navy, one section, 6 cards:
     1. Career & Antecedents -> portfolio.omranisystems.com
     2. Public Services      -> /services (software, embedded, full systems, OS/embedded OS, security)
     3. Products             -> /contact (titled "Products": emails, phone, note asking for identity
