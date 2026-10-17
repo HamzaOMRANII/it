@@ -159,6 +159,44 @@ body{
 .status-live{ color: var(--petrol-bright); }
 .status-building{ color: var(--gold); }
 .status-planned{ color: var(--ink-dim); }
+.status-open{ color: var(--petrol-bright); }
+.status-request, .status-reserved{ color: var(--gold); }
+.status-bounty{ color: #EF4444; }
+
+/* ---------- inner pages ---------- */
+.card-static:hover{ transform: none; border-color: var(--navy-line); background: rgba(10,21,36,0.6); }
+.page-inner{ gap: 40px; padding-top: 56px; }
+.hero-sm{ gap: 20px; }
+.hero-sm .hero-mark{ width: 64px; height: 64px; }
+.hero-sm .wordmark{ font-size: clamp(28px, 5vw, 40px); }
+.hero-sm .domain{ margin-top: 8px; font-size: 13px; }
+.inner{ flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.back{
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+.back:hover{ color: var(--petrol-bright); }
+.inner-title{ margin: 0; font-family: var(--font-mark); font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.02em; color: #fff; }
+.inner .grid{ flex: none; }
+.inner-lead{ margin: -8px 0 0; max-width: 60ch; color: var(--ink-muted); }
+.inner-note{ margin: 0; color: var(--ink-muted); }
+.inner-note a{ color: var(--petrol-bright); }
+.panel{
+  padding: 28px;
+  border: 1px solid var(--navy-line);
+  border-radius: 20px;
+  background: rgba(10,21,36,0.6);
+  backdrop-filter: blur(8px);
+  color: var(--ink-muted);
+  font-size: 17px;
+}
+.panel p{ margin: 0 0 12px; }
+.panel p:last-child{ margin-bottom: 0; }
+.panel-danger{ border-color: rgba(239,68,68,0.4); box-shadow: 0 0 60px rgba(239,68,68,0.08); }
+.panel-big{ font-family: var(--font-mark); font-size: clamp(24px, 4vw, 34px); font-weight: 700; line-height: 1.15; color: #fff; }
 
 .footer{ text-align: center; font-size: 13px; color: var(--ink-dim); }
 
@@ -170,4 +208,7 @@ body{
   .domain{ margin-left: 0; }
   .grid{ grid-template-columns: minmax(0, 1fr); }
   .card{ padding: 16px; gap: 14px; }
+  .page-inner{ padding-top: 40px; }
+  .hero-sm{ flex-direction: row; text-align: left; }
+  .panel{ padding: 20px; font-size: 16px; }
 }

@@ -1,11 +1,38 @@
-import { Logo } from './components/Logo.jsx';
-import { AppMark } from './components/AppMark.jsx';
-import { apps, statusLabel } from './apps.js';
+import { Hero } from './components/Hero.jsx';
+import { Card } from './components/Card.jsx';
+import { apps } from './apps.js';
+import { usePath } from './router.js';
+import { Services, Premium, Contact, DangerZone } from './pages.jsx';
 
 const host = (url) => new URL(url).host;
 
+const routes = {
+  '/services': Services,
+  '/premium': Premium,
+  '/contact': Contact,
+  '/danger-zone': DangerZone,
+};
+
+function Home() {
+  return (
+    <main className="page">
+      <Hero>
+        it.omranisystems.com <span className="sep">/</span> projects &amp; services
+      </Hero>
+
+      <section className="grid" aria-label="Projects and services">
+        {apps.map((a) => (
+          <Card key={a.id} {...a} meta={`${a.kind} · ${a.url ? host(a.url) : a.to}`} />
+        ))}
+      </section>
+
+      <footer className="footer">© {new Date().getFullYear()} Hamza Omrani LLC</footer>
+    </main>
+  );
+}
+
 export default function App() {
-  const live = apps.filter((a) => a.status === 'live').length;
+  const Page = routes[usePath()] || Home;
 
   return (
     <>
@@ -14,43 +41,7 @@ export default function App() {
         <div className="orb orb-b" />
         <div className="noise" />
       </div>
-
-      <main className="page">
-        <header className="hero">
-          <Logo className="hero-mark" />
-          <div>
-            <h1 className="wordmark">
-              <span className="w-strong">omrani</span>
-              <span className="w-light">systems</span>
-            </h1>
-            <p className="domain">
-              it.omranisystems.com <span className="sep">/</span> {apps.length} apps &amp; services, {live} live
-            </p>
-          </div>
-        </header>
-
-        <section className="grid" aria-label="Apps and services">
-          {apps.map((a) => (
-            <a key={a.id} className="card" href={a.url} target="_blank" rel="noopener noreferrer">
-              <span className="tile">
-                <AppMark {...a.icon} />
-              </span>
-              <span className="card-body">
-                <span className="card-top">
-                  <span className="card-name">{a.name}</span>
-                  <span className={`status status-${a.status}`}>{statusLabel[a.status]}</span>
-                </span>
-                <span className="card-text">{a.text}</span>
-                <span className="card-meta">
-                  {a.kind} <span className="sep">·</span> {host(a.url)}
-                </span>
-              </span>
-            </a>
-          ))}
-        </section>
-
-        <footer className="footer">© {new Date().getFullYear()} Hamza Omrani LLC</footer>
-      </main>
+      <Page />
     </>
   );
 }

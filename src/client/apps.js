@@ -1,34 +1,37 @@
-// Everything listed on the page. Add an entry here to add a card.
-// icon: accent colours of the app's mark, the same ones the omranisystems.com tiles use.
-// status: 'live' | 'building' | 'planned'
+// Everything listed on the site. Add an entry here to add a card.
+// icon: accent colours of the card's mark. status: key of statusLabel (chip text and colour).
+// A card with `url` opens in a new tab, a card with `to` opens an internal page.
+
+export const emails = ['hamza.omrani.it@gmail.com', 'contact@omranisystems.com'];
+export const phone = { label: '+1 505 659 2792', href: 'tel:+15056592792' };
 
 export const apps = [
   {
-    id: 'pass',
-    name: 'Pass',
-    kind: 'App',
-    text: 'Self-hosted password manager with encrypted vaults and shared access.',
-    url: 'https://pass.omranisystems.com/',
-    status: 'live',
-    icon: { line: '#EF4444', badge: '#DC2626', glyph: 'lock' },
+    id: 'career',
+    name: 'Career & Antecedents',
+    kind: 'Site',
+    text: 'Years of code, circuits and caffeine. Hamza Omrani’s track record, bugs not included.',
+    url: 'https://portfolio.omranisystems.com/',
+    status: 'open',
+    icon: { line: '#2FD1D9', badge: '#1C6E7A', glyph: 'briefcase' },
   },
   {
-    id: 'chat',
-    name: 'H_CHAT',
-    kind: 'App · Android',
-    text: 'End-to-end encrypted chat with live mode, web and Android.',
-    url: 'https://chat.omranisystems.com/',
-    status: 'building',
-    icon: { line: '#8C2A3F', badge: '#6E1B2B', glyph: 'chat' },
+    id: 'services',
+    name: 'Public Services',
+    kind: 'Page',
+    text: 'Software, embedded, full systems, operating systems and security work for hire.',
+    to: '/services',
+    status: 'open',
+    icon: { line: '#8C2A3F', badge: '#6E1B2B', glyph: 'grid' },
   },
   {
-    id: 'gym',
-    name: 'Gym',
-    kind: 'App · Android',
-    text: 'Beginner strength training: weekly plans, set logging and progress.',
-    url: 'https://gym.omranisystems.com/',
-    status: 'live',
-    icon: { line: '#EA580C', badge: '#EA580C', glyph: 'gym' },
+    id: 'products',
+    name: 'Products',
+    kind: 'Page',
+    text: 'The list of available products is given on request. Contact the admin or owner.',
+    to: '/contact',
+    status: 'request',
+    icon: { line: '#EA580C', badge: '#EA580C', glyph: 'box' },
   },
   {
     id: 'ai',
@@ -40,27 +43,53 @@ export const apps = [
     icon: { line: '#6B7380', badge: '#3F4652', glyph: 'spark' },
   },
   {
-    id: 'portfolio',
-    name: 'Portfolio',
-    kind: 'Site',
-    text: 'IT solutions: full-stack, embedded, AI/BI and security.',
-    url: 'https://portfolio.omranisystems.com/',
-    status: 'live',
-    icon: { line: '#2FD1D9', badge: '#1C6E7A', glyph: 'code' },
+    id: 'premium',
+    name: 'Premium Services',
+    kind: 'Page',
+    text: 'Reserved for governments, large companies and individuals who need highly secure, advanced technology.',
+    to: '/premium',
+    status: 'reserved',
+    icon: { line: '#C9A24D', badge: '#8A6B22', glyph: 'shield' },
   },
   {
-    id: 'gate',
-    name: 'Gate',
-    kind: 'Service',
-    text: 'One access code per app, checked by Nginx before every request.',
-    url: 'https://omranisystems.com/',
-    status: 'live',
-    icon: { line: '#1E8FE1', badge: '#1E8FE1', glyph: 'key' },
+    id: 'danger',
+    name: 'Danger Zone',
+    kind: 'Page',
+    text: 'Grey, red, black or white hat? Report the bug you found, or try our server. The ideas are not on it.',
+    to: '/danger-zone',
+    status: 'bounty',
+    icon: { line: '#EF4444', badge: '#B91C1C', glyph: 'skull' },
   },
 ];
 
 export const statusLabel = {
-  live: 'Live',
-  building: 'In progress',
+  open: 'Open',
+  request: 'On request',
   planned: 'Planned',
+  reserved: 'Reserved',
+  bounty: 'Bug reports',
 };
+
+// Inner pages: cards without links, glyph + one line each.
+const mark = { line: '#2FD1D9', badge: '#1C6E7A' };
+const gold = { line: '#C9A24D', badge: '#8A6B22' };
+
+export const services = [
+  { name: 'Software solutions', text: 'Web, desktop and backend software built to fit your need.', icon: { ...mark, glyph: 'code' } },
+  { name: 'Embedded systems', text: 'Firmware and electronics for devices that must just work.', icon: { ...mark, glyph: 'chip' } },
+  { name: 'Full systems', text: 'End to end: hardware, firmware, software and cloud, in one hand.', icon: { ...mark, glyph: 'layers' } },
+  { name: 'OS and embedded OS', text: 'Custom operating systems and embedded OS builds.', icon: { ...mark, glyph: 'terminal' } },
+  { name: 'Security services', text: 'Audits, and checks of security features in embedded systems and software.', icon: { ...mark, glyph: 'shieldcheck' } },
+];
+
+export const premium = [
+  { name: 'GPS & geolocation', text: 'Precise positioning and location systems.', icon: { ...gold, glyph: 'pin' } },
+  { name: 'Aviation systems', text: 'Technology for aircraft and flight operations.', icon: { ...gold, glyph: 'plane' } },
+  { name: 'Intelligence & counter-surveillance', text: 'Spot who is watching, and stay unseen.', icon: { ...gold, glyph: 'eye' } },
+  { name: 'Digital forensics', text: 'Evidence from devices and data, handled properly.', icon: { ...gold, glyph: 'print' } },
+  { name: 'Data recovery', text: 'Get back what was lost, damaged or deleted.', icon: { ...gold, glyph: 'disk' } },
+  { name: 'Information gathering', text: 'OSINT: open-source intelligence, done methodically.', icon: { ...gold, glyph: 'globe' } },
+  { name: 'Deep IT investigations', text: 'Find out what really happened inside your systems.', icon: { ...gold, glyph: 'search' } },
+  { name: 'Trackers', text: 'Know where your assets are, in real time.', icon: { ...gold, glyph: 'target' } },
+  { name: 'Tracers', text: 'Follow a trail back to its source.', icon: { ...gold, glyph: 'route' } },
+];
