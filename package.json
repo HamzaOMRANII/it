@@ -1,0 +1,23 @@
+{
+  "name": "omrani-it",
+  "version": "0.1.0",
+  "private": true,
+  "description": "it.omranisystems.com: every app and service Hamza Omrani works on",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.4"
+  }
+}
