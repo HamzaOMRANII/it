@@ -48,10 +48,13 @@ export function Premium() {
 
 export function Contact() {
   return (
-    <Page id="products" path="/contact" title="Contact" lead="Write or call. Products list and quotes are given on request.">
+    <Page id="products" path="/contact" title="Products" lead="The list of products is given on request. Write or call.">
       <div className="grid">
         {contactCards('products').map((c) => <Card key={c.text} {...c} />)}
       </div>
+      <p className="inner-note">
+        Please tell us who you are and the field of products you are looking for, so we can send you the list that suits your case.
+      </p>
     </Page>
   );
 }
